@@ -1,0 +1,17 @@
+# 仮想フォルダ
+venv/
+
+# Pythonのキャッシュファイル
+__pycache__/
+*.pyc
+
+# OS固有のファイル
+.DS_Store
+Thumbs.db
+
+# 設定ファイル
+config.ini 
+.env
+
+# 個人フォルダ
+data/
