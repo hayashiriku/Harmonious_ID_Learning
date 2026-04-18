@@ -1,5 +1,6 @@
 # 仮想フォルダ
 venv/
+.venv/
 
 # Pythonのキャッシュファイル
 __pycache__/
