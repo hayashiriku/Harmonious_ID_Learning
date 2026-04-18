@@ -1,1 +1,6 @@
 # ライブラリ名
+torch 
+torchvision 
+transformers 
+pandas 
+pillow
