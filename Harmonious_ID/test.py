@@ -53,7 +53,7 @@ def verify_kmeans_inference():
     # 2. テスト入力（検証したいプレイリストとジャンル）
     # ==========================================
     # ★ ここに検証したいプレイリスト名を入力してください
-    target_playlist = "Songs I want to listen to at sunrise"
+    target_playlist = "Songs to Listen to on a Spring day"  # 例: "Songs I want to listen to at night"
     
     # ★ ここに、そのプレイリストの中から絞り込みたいジャンルや特徴を入力してください
     # （例: "j-pop", "anime", またはジャンル指定なしなら ""）
