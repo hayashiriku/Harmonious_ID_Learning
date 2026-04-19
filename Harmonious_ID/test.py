@@ -78,7 +78,7 @@ def verify_kmeans_inference():
         t_vec = np.zeros_like(p_vec) # 指定なしの場合はゼロ埋め
 
     # 結合してK-Meansに入力するクエリを作成
-    query_vector = np.concatenate([p_vec, t_vec])
+    query_vector = np.concatenate([p_vec * 1.5, t_vec * 1.0])
     query_residual = query_vector.reshape(1, -1)
 
     # ==========================================
@@ -88,7 +88,8 @@ def verify_kmeans_inference():
     offset = 0
 
     for kmeans_model in kmeans_models:
-        label = kmeans_model.predict(query_residual)[0]
+        X_for_prediction = np.array(query_residual, dtype=np.float32)
+        label = kmeans_model.predict(X_for_prediction)[0]
         token = f"<{label + offset}>"
         predicted_tokens.append(token)
         

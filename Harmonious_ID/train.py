@@ -69,9 +69,10 @@ def train():
     for i, row in df.iterrows():
         p_vec = playlist_vec_map[row['プレイリスト名']]
         t_vec = track_embeddings[i]
-        hybrid_vectors.append(np.concatenate([p_vec, t_vec]))
+        weighted_vector = np.concatenate([p_vec * 1.5, t_vec * 1.0])
+        hybrid_vectors.append(weighted_vector.astype(np.float32))
     
-    hybrid_vectors = np.array(hybrid_vectors)
+    hybrid_vectors = np.array(hybrid_vectors, dtype=np.float32)
 
     # ==========================================
     # 3. 残差量子化 (Residual Quantization)
