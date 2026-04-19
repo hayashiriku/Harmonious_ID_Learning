@@ -4,3 +4,5 @@ torchvision
 transformers 
 pandas 
 pillow
+joblib
+scikit-learn
