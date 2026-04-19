@@ -70,14 +70,14 @@ def train():
         p_vec = playlist_vec_map[row['プレイリスト名']]
         t_vec = track_embeddings[i]
         hybrid_vectors.append(np.concatenate([p_vec, t_vec]))
-        
+    
     hybrid_vectors = np.array(hybrid_vectors)
 
     # ==========================================
     # 3. 残差量子化 (Residual Quantization)
     # ==========================================
     print("\n残差量子化によるID生成を開始します...")
-    N_CLUSTERS = [8, 8, 8, 8] 
+    N_CLUSTERS = [8, 4, 2] 
     
     residuals = hybrid_vectors.copy()
     num_layers = len(N_CLUSTERS)
